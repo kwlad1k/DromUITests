@@ -121,10 +121,10 @@ clean test
 <img title="Dashboard Allure TestOps" src="media/screenshots/TestOpsDashboard.png">
 </p>
 
-### :checkered_flag: Результат выполнения сборки #10
+### :checkered_flag: Результат выполнения сборки #50
 
 <p align="center">
-<img title="Сборка#10 в Allure TestOps" src="media/screenshots/TestOpsResult-10.png">
+<img title="Сборка#10 в Allure TestOps" src="media/screenshots/TestOpsResult-50.png">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/AllureReport.svg"> [Пример](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/10/allure/) Allure-отчета
@@ -148,7 +148,7 @@ clean test
 
 ## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logos/Jira.svg"> [Интеграция](https://jira.autotests.cloud/browse/HOMEWORK-1149) с Jira
 
-Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются прикрепленные тесты и результат прогона сборки #10.
+Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются прикрепленные тесты и результат прогона сборки #50.
 
 <p align="center">
 <img title="Тикет в Jira" src="media/screenshots/Jira.png">
