@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
 @DisplayName("Тесты авторизации")
-public class AuthDromTests {
+public class AuthDromTests extends TestBase {
 
     MainPage mainPage = new MainPage();
 
