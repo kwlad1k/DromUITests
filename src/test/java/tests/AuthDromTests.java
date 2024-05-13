@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
+@DisplayName("Тесты авторизации")
 public class AuthDromTests {
 
     MainPage mainPage = new MainPage();
