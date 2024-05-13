@@ -4,7 +4,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import pages.MainPage;
 
-public class DromRuPracticeTests extends TestBase {
+public class FunctionalDromTests extends TestBase {
 
     MainPage mainPage = new MainPage();
 

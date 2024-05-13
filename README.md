@@ -32,13 +32,22 @@
 <a href="https://www.atlassian.com/ru/software/jira/"><img width="5%" title="Jira" src="media/logos/Jira.svg"></a>
 </p>
 
-Тесты в проекте написаны на языке <code>Java</code> с применением фреймворка для тестирования [Selenide](https://selenide.org/) и сборщика <code>Gradle</code>. <code>JUnit 5</code> используется в качестве фреймворка модульного тестирования.
+- Тесты в проекте написаны на языке [Java](https://www.java.com/ru/)
+- C применением фреймворка для модульного тестирования [Junit5](https://github.com/junit-team/junit5)
+- Система автоматической сборки [Gradle](https://github.com/gradle)
+- Реализация UI тестов с помощью [Selenide](https://selenide.org/), обеспечивающего простой и мощный синтаксис для управления браузером и взаимодействия с веб-элементами
+- Удаленный запуск с выбором параметров для тестов реализован при помощи [Jenkins](https://www.jenkins.io/)
+- Отчеты о пройденных тестах формируются при помощи [Allure](https://github.com/allure-framework)
+- Так же отчеты о тестировании отправляются в мессенджер при помощи [Telegram](https://t.me/publicDromAlerts) бота
+- Реализована интеграция  с [Allure TestOps](https://qameta.io/)
+- Реализована интеграция с [Jira Software](https://www.atlassian.com/software/jira)
 
-Для удаленного запуска браузеров в процессе тестирования используется [Selenoid](https://aerokube.com/selenoid/).
+## :star: Особенности-проекта
+- Использование подхода `PageObjects` для проектирвоания автоматических тестов
+- Использование техноголии `Owner` для придания тестам гибкости и легкости конфигурации
+- Использование библиотеки `JavaFaker` для генерации рандомных и выборки тестовых данных
 
-Для организации удаленного выполнения тестов настроена задача в <code>Jenkins</code> с формированием отчетов Allure и отправкой результатов в <code>Telegram</code> через бота. Также реализована интеграция с <code>Allure TestOps</code> и <code>Jira</code>.
-
-Содержание Allure-отчета:
+По итогу прохождения тестов генерируется `Allure-отчет`, который содержит в себе
 * Шаги теста;
 * Скриншот страницы на последнем шаге теста;
 * Page Source;
@@ -47,19 +56,23 @@
 
 ## :scroll: Реализованные проверки:
 
-- Проверка наличия заголовка на главой странице
-- Проверка наличия блока 'Новых автомобилей от дилеров'
-- Проверка наличия блока 'Отзывов от автомобилях'
-- Проверка наличия блока премиум карусели автомобилей
-- Проверка смены региона
-- Проверка успешной авторизации пользователя
-- Негативаня проверка авторизации с некорректными данными
-- Проверка выдачи результатов поиска авто по Госномеру
-- Проверка при вводе неваллидных данных в поле поиска истории по авто
-- Проверка поиска обьвлений авто по списку
-- Проверка перехода по вкладке 'Автомобили'
+- [x] Проверка наличия заголовка на главой странице
+- [x] Проверка наличия блока 'Новых автомобилей от дилеров'
+- [x] Проверка наличия блока 'Отзывов от автомобилях'
+- [x] Проверка наличия блока премиум карусели автомобилей
+- [x] Проверка смены региона
+- [x] Проверка успешной авторизации пользователя
+- [x] Негативаня проверка авторизации с некорректными данными
+- [x] Проверка выдачи результатов поиска авто по Госномеру
+- [x] Проверка при вводе неваллидных данных в поле поиска истории по авто
+- [x] Проверка поиска обьвлений авто по списку
+- [x] Проверка перехода по вкладке 'Автомобили'
 
 ## :arrow_forward: Запуск автотестов
+> [!NOTE]
+> Для локального запуска тестов убедитесь, что у вас установлены Java, Gradle, IntelliJ IDEA
+>
+> Подробную инструкцию по установке можно найти по [ссылке](https://github.com/qa-guru/getting-started-java/wiki)
 
 ### Локальный запуск тестов из терминала (с параметрами по умолчанию)
 
@@ -69,7 +82,8 @@ gradle clean test
 
 ### Запуск тестов из Jenkins (с указанием параметров)
 ```
-clean test -Ddriver=remote
+clean test 
+-Ddriver=remote
 -Dbrowser.name=${BROWSER}
 -Dbrowser.version=${BROWSER_VERSION} 
 -Dbrowser.size=${BROWSER_SIZE}
@@ -107,7 +121,7 @@ clean test -Ddriver=remote
 <img title="Dashboard Allure TestOps" src="media/screenshots/TestOpsDashboard.png">
 </p>
 
-### Результат выполнения сборки #10
+### :checkered_flag: Результат выполнения сборки #10
 
 <p align="center">
 <img title="Сборка#10 в Allure TestOps" src="media/screenshots/TestOpsResult-10.png">
@@ -126,7 +140,7 @@ clean test -Ddriver=remote
 <img title="Список тест-кейсов в отчёте Allure" src="media/screenshots/AllureSuites.png">
 </p>
 
-### Графики
+### :bar_chart: Графики
 
 <p align="center">
 <img title="Графики прохождения сборки в отчёте Allure" src="media/screenshots/AllureCharts.png">
@@ -145,7 +159,7 @@ clean test -Ddriver=remote
 После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения автотестов.
 
 <p align="center">
-<img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
+<img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts-1.png">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска автотестов в Selenoid
