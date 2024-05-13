@@ -20,7 +20,7 @@ public class TestBase {
     static void beforeAll() {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
         Configuration.baseUrl = "https://www.drom.ru/";
-        Configuration.pageLoadStrategy = "normal";
+        Configuration.pageLoadStrategy = "eager";
         Configuration.browser = driverConfig.browserName();
         Configuration.browserVersion = driverConfig.browserVersion();
         Configuration.browserSize = driverConfig.browserSize();

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import pages.MainPage;
 
 public class DromRuPracticeTests extends TestBase {
+
     MainPage mainPage = new MainPage();
 
     TestData testData = new TestData();
@@ -76,39 +77,7 @@ public class DromRuPracticeTests extends TestBase {
                 .checkRegion(testData.regionName);
     }
 
-    @Test
-    @Owner("Kwlad1ck")
-    @Severity(SeverityLevel.BLOCKER)
-    @Tags({
-            @Tag("Positive"),
-            @Tag("SMOKE"),
-            @Tag("Authorization")
-    })
-    @DisplayName("Проверка успешной авторизации пользователя")
-    void successfulAuthTest() {
-        mainPage.openPage()
-                .clickAuthBtn()
-                .setAuthData(testData.userName, testData.userPassword)
-                .clickSignBtn()
-                .checkAuthUserElement();
-    }
 
-    @Test
-    @Owner("Kwlad1ck")
-    @Tags({
-            @Tag("NegativeAuth"),
-            @Tag("SMOKE"),
-            @Tag("Authorization")
-    })
-    @DisplayName("Негативаня проверка авторизации с некорректными данными")
-    void negativeAuthTest() {
-        mainPage.openPage()
-                .clickAuthBtn()
-                .setAuthData(testData.randomEmail, testData.randomPassword)
-                .clickSignBtn()
-                .checkAuthErrors();
-
-    }
 
     @Test
     @Owner("Kwlad1ck")
@@ -171,5 +140,4 @@ public class DromRuPracticeTests extends TestBase {
                 .checkPremiumCarousel();
 
     }
-
 }

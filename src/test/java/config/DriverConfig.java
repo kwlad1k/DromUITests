@@ -8,6 +8,7 @@ import org.aeonbits.owner.Config;
         "classpath:config/${driver}.properties"})
 
 public interface DriverConfig extends Config {
+
     @Key("browser.name")
     @DefaultValue("chrome")
     String browserName();
