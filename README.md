@@ -7,7 +7,7 @@
 
 - [Используемый стек технологий](#computer-используемый-стек-технологий)
 - [Реализованные проверки](#scroll-реализованные-проверки)
-- [Запуск автотестов](#arrow_forward-запуск-автотестов)
+- [Запуск авто тестов](#arrow_forward-запуск-автотестов)
 - [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
 - [Пример Allure-отчета](#-пример-allure-отчета)
@@ -43,8 +43,8 @@
 - Реализована интеграция с [Jira Software](https://www.atlassian.com/software/jira)
 
 ## :star: Особенности-проекта
-- Использование подхода `PageObjects` для проектирвоания автоматических тестов
-- Использование техноголии `Owner` для придания тестам гибкости и легкости конфигурации
+- Использование подхода `PageObjects` для проектирования автоматических тестов
+- Использование технологии `Owner` для придания тестам гибкости и легкости конфигурации
 - Использование библиотеки `JavaFaker` для генерации рандомных и выборки тестовых данных
 
 По итогу прохождения тестов генерируется `Allure-отчет`, который содержит в себе
@@ -52,7 +52,7 @@
 * Скриншот страницы на последнем шаге теста;
 * Page Source;
 * Логи браузерной консоли;
-* Видео выполнения автотеста.
+* Видео выполнения авто теста.
 
 ## :scroll: Реализованные проверки:
 
@@ -62,13 +62,13 @@
 - [x] Проверка наличия блока премиум карусели автомобилей
 - [x] Проверка смены региона
 - [x] Проверка успешной авторизации пользователя
-- [x] Негативаня проверка авторизации с некорректными данными
+- [x] Негативная проверка авторизации с некорректными данными
 - [x] Проверка выдачи результатов поиска авто по Госномеру
-- [x] Проверка при вводе неваллидных данных в поле поиска истории по авто
-- [x] Проверка поиска обьвлений авто по списку
+- [x] Проверка при вводе не валидных данных в поле поиска истории по авто
+- [x] Проверка поиска объявлений авто по списку
 - [x] Проверка перехода по вкладке 'Автомобили'
 
-## :arrow_forward: Запуск автотестов
+## :arrow_forward: Запуск авто тестов
 > [!NOTE]
 > Для локального запуска тестов убедитесь, что у вас установлены Java, Gradle, IntelliJ IDEA
 >
@@ -115,7 +115,7 @@ clean test
 
 ## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logos/AllureTestOps.svg"> [Интеграция](https://allure.autotests.cloud/project/4102/dashboards) с Allure TestOps
 
-На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них активных/находяться в ревью/черновик/устаревшие, а так же количество ручных и автоматизированных тестов. Результаты выполнения тестов приходят в автоматическом режиме по интеграции при каждом запуске сборки проекта.
+На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них активных/находятся в ревью/черновик/устаревшие, а так же количество ручных и автоматизированных тестов. Результаты выполнения тестов приходят в автоматическом режиме по интеграции при каждом запуске сборки проекта.
 
 <p align="center">
 <img title="Dashboard Allure TestOps" src="media/screenshots/TestOpsDashboard.png">
@@ -128,13 +128,13 @@ clean test
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/AllureReport.svg"> [Пример](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/10/allure/) Allure-отчета
-### Основаня страница отчета
+### Основная страница отчета
 
 <p align="center">
 <img title="Общий вид отчёта Allure" src="media/screenshots/AllureOverview.png">
 </p>
 
-### Результат выполнения автотестов
+### Результат выполнения авто тестов
 
 <p align="center">
 <img title="Список тест-кейсов в отчёте Allure" src="media/screenshots/AllureSuites.png">
@@ -151,18 +151,18 @@ clean test
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются прикрепленные тесты и результат прогона сборки #50.
 
 <p align="center">
-<img title="Тикет в Jira" src="media/screenshots/Jira.png">
+<img title="Задача в Jira" src="media/screenshots/Jira.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> Уведомления в [Telegram канал](https://t.me/publicDromAlerts) с использованием бота 
+## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> Уведомления в [Telegram канал](https://t.me/publicDromAlerts) с использованием бота
 
-После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения автотестов.
+После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения авто тестов.
 
 <p align="center">
 <img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts-1.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска автотестов в Selenoid
+## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска авто тестов в Selenoid
 
 В отчетах Allure для каждого теста прикреплён не только скриншот, но и видео прохождения теста, записанное Selenoid.
 <p align="center">
